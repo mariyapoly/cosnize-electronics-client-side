@@ -1,0 +1,34 @@
+nav.navbar {
+    background: #5677FC;
+}
+.categories.nav-item.dropdown {
+    background: #343F6B;
+    color: #ffff;
+    width: 270px;
+}
+a#basic-nav-dropdown {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.m-auto.navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 14px;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+.call-area {
+    display: flex;
+}
+.call-area p {
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+}
+.call-area img {
+    width: 42px;
+    margin-right: 10px;
+}
