@@ -1,13 +1,21 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, NavDropdown, Row } from 'react-bootstrap';
 import './HeaderTop.css';
 import logo from '../../../images/logo.png';
 import hart from '../../../images/hart.png';
 import cart from '../../../images/cart.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const HeaderTop = () => {
+
+    const { signOutUser, user } = useAuth();
+    const logOut = () => {
+        signOutUser();
+    }
+
     return (
         <>
             <div className='header-top'>
@@ -21,7 +29,14 @@ const HeaderTop = () => {
                         <Col lg={6}>
                             <div className="headertop-right">
                                 <ul>
-                                    <li>My account</li>
+                                    <li>
+                                        <NavDropdown title="My account" id="basic-nav-dropdown">
+                                            <NavLink end to="/">Register</NavLink>
+                                            <NavLink end to="/SignIn">Sign In</NavLink>
+                                            <button className='logout-btn' onClick={logOut}>Sign Out</button>
+                                        </NavDropdown>
+                                    </li>
+                                    <li>{user.displayName}</li>
                                     <li>$ USD</li>
                                     <li>English</li>
                                 </ul>
