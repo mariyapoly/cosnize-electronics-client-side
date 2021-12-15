@@ -10,9 +10,12 @@
 .headertop-right ul li, .headertop-left p {
     color: #222222;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 15px;
 } 
+.headertop-left p {
+    margin: 0;
+}
 .header {
     padding: 30px 0;
 }

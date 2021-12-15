@@ -1,0 +1,18 @@
+.pay-bg {
+    background: url(../../../images/section-bg.png) no-repeat center;
+    background-size: cover;
+    padding: 30px 0;
+    text-align: center;
+}
+.pay-bg h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: #363F4D;
+}
+span.red {
+    color: #F90A0A;
+}
+span.blue {
+    color: #5677FC;
+}

@@ -17,7 +17,7 @@ const OurService = () => {
                                 <img src={serviceImg1} alt="" />
                             </div>
                             <div className="service-text">
-                                <h5>free Delivery</h5>
+                                <h5>Free Delivery</h5>
                                 <p>free shopping on all order</p>
                             </div>
                         </div>
@@ -28,8 +28,8 @@ const OurService = () => {
                                 <img src={serviceImg2} alt="" />
                             </div>
                             <div className="service-text">
-                                <h5>free Delivery</h5>
-                                <p>free shopping on all order</p>
+                                <h5>Online Support 24/7</h5>
+                                <p>Support online 24 hours</p>
                             </div>
                         </div>
                     </Col>
@@ -39,8 +39,8 @@ const OurService = () => {
                                 <img src={serviceImg3} alt="" />
                             </div>
                             <div className="service-text">
-                                <h5>free Delivery</h5>
-                                <p>free shopping on all order</p>
+                                <h5>Money Return</h5>
+                                <p>Back guarantee under 7 days</p>
                             </div>
                         </div>
                     </Col>
@@ -50,8 +50,8 @@ const OurService = () => {
                                 <img src={serviceImg4} alt="" />
                             </div>
                             <div className="service-text">
-                                <h5>free Delivery</h5>
-                                <p>free shopping on all order</p>
+                                <h5>Member Discount</h5>
+                                <p>Onevery order over $30.00</p>
                             </div>
                         </div>
                     </Col>

@@ -1,0 +1,49 @@
+.date span {
+    color: #666666;
+    font-size: 14px;
+    font-weight: 300;
+    margin-right: 30px;
+}
+.date {
+    margin: 8px 0;
+}
+.single-blog h6 {
+    color: #222222;
+    font-size: 15px;
+}
+.single-blog p {
+    color: #666666;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+button.read-more-btn {
+    background: no-repeat;
+    border: 0;
+    padding: 0;
+    color: #222222;
+    font-size: 14px;
+}
+.review-bg {
+    position: relative;
+}
+.client-thumb {
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.review-text {
+    text-align: center;
+    padding: 60px 24px 0px;
+}
+.review-text p {
+    color: #666666;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+.review-text span {
+    color: #5677FC;
+    font-weight: 500;
+    font-size: 14px;
+}

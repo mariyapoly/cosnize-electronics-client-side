@@ -1,0 +1,20 @@
+
+.single-product {
+    border-right: 1px solid #EBEBEB;
+    margin: 20px 0;
+    position: relative;
+}
+
+.product-btn {
+    opacity: 0;
+    transition: all linear 0.3s;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    -ms-transition: all linear 0.3s;
+    -o-transition: all linear 0.3s;
+    transform: translateY(-22px);
+}
+.single-product:hover .product-btn {
+    display: block;
+    opacity: 1;
+}
