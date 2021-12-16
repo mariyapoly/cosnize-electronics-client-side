@@ -19,8 +19,8 @@ const Home = () => {
             <ProductBanner></ProductBanner>
             <ProductOfferSlider></ProductOfferSlider>
             <PayDebit></PayDebit>
-            {/* <NewArriaval></NewArriaval>
-            <CSFProducts></CSFProducts> */}
+            <NewArriaval></NewArriaval>
+            <CSFProducts></CSFProducts>
             <TopProducts></TopProducts>
             <BlogReview></BlogReview>
             <Brand></Brand>

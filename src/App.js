@@ -14,6 +14,13 @@ import LogInForm from './Pages/LogInForm/LogInForm/LogInForm';
 import AuthProvider from './contexts/AuthProvider';
 import CameraAllProducts from './Pages/ProductCategory/CameraAllProducts/CameraAllProducts';
 import TvAllProducts from './Pages/ProductCategory/TvAllProducts/TvAllProducts';
+import ProductsDetails from './Pages/ProductsDetails/ProductsDetails';
+import PrivateRoute from './Pages/LogInForm/PrivateRoute/PrivateRoute';
+import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
+import Payment from './Pages/DashBoard/Payment/Payment';
+import WishList from './Pages/DashBoard/WishList/WishList';
+import Reviews from './Pages/DashBoard/Reviews/Reviews';
+import Orders from './Pages/DashBoard/Orders/Orders';
 
 function App() {
   return (
@@ -27,6 +34,14 @@ function App() {
           <Route path="/SignIn" element={<LogInForm />} />
           <Route path="/camera" element={<CameraAllProducts />} />
           <Route path="/television" element={<TvAllProducts />} />
+          <Route path="/dashboard" element={<PrivateRoute><DashBoard /></PrivateRoute>} >
+            <Route path={`/dashboard/payment`} element={<Payment />} />
+            <Route path={`/dashboard/wishlist`} element={<WishList />} />
+            <Route path={`/dashboard/reviews`} element={<Reviews />} />
+            <Route path={`/dashboard/orders`} element={<Orders />} />
+          </Route>
+          <Route path="/ProductsDetails/:id" element={<PrivateRoute><ProductsDetails /></PrivateRoute>} />
+
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

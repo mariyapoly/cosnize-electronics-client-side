@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, NavDropdown, Row } from 'react-bootstrap';
 import './HeaderTop.css';
 import logo from '../../../images/logo.png';
@@ -6,14 +6,28 @@ import hart from '../../../images/hart.png';
 import cart from '../../../images/cart.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import axios from 'axios';
 
 const HeaderTop = () => {
 
+    const [products, setProducts] = useState([])
+    const navigate = useNavigate();
     const { signOutUser, user } = useAuth();
     const logOut = () => {
         signOutUser();
+    }
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/cartProduct/${user.email}`)
+            .then(function (response) {
+                setProducts(response.data);
+            })
+    }, [products, user.email])
+
+    const handleCartBtn = () => {
+        navigate('/dashboard/orders')
     }
 
     return (
@@ -29,14 +43,18 @@ const HeaderTop = () => {
                         <Col lg={6}>
                             <div className="headertop-right">
                                 <ul>
-                                    <li>
-                                        <NavDropdown title="My account" id="basic-nav-dropdown">
-                                            <NavLink end to="/">Register</NavLink>
-                                            <NavLink end to="/SignIn">Sign In</NavLink>
-                                            <button className='logout-btn' onClick={logOut}>Sign Out</button>
-                                        </NavDropdown>
-                                    </li>
-                                    <li>{user.displayName}</li>
+                                    <li className='sign-in'><NavLink end to="/SignIn">Sign In</NavLink></li>
+                                    {
+                                        user.email && <> <li>
+                                            <NavDropdown title="My account" id="basic-nav-dropdown">
+                                                <NavLink end to="/dashboard">Dashboard</NavLink>
+                                                <button className='logout-btn' onClick={logOut}>Sign Out</button>
+                                            </NavDropdown>
+                                        </li>
+
+                                            <li>{user.displayName}</li>
+                                        </>
+                                    }
                                     <li>$ USD</li>
                                     <li>English</li>
                                 </ul>
@@ -61,8 +79,15 @@ const HeaderTop = () => {
                         </Col>
                         <Col lg={3}>
                             <div className="cart-thumb">
-                                <img src={hart} alt="hart" />
-                                <img src={cart} alt="cart" />
+                                <ul>
+                                    <li>
+                                        <img src={hart} alt="hart" />
+                                    </li>
+                                    <li className='cart' onClick={handleCartBtn}>
+                                        <img src={cart} alt="cart" />
+                                        <span>{products.length}</span>
+                                    </li>
+                                </ul>
                             </div>
                         </Col>
                     </Row>

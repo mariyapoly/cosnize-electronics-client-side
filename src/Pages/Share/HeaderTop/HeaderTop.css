@@ -28,6 +28,9 @@
     padding: 5px 15px;
     font-size: 14px;
 }
+.headertop-right ul li.sign-in a {
+    padding: 0;
+}
 button.logout-btn {
     color: #222;
     border: 0;
@@ -64,4 +67,27 @@ button.logout-btn {
 }
 .cart-thumb img {
     margin: 0 13px;
+}
+.cart-thumb ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+li.cart {
+    position: relative;
+    cursor: pointer;
+}
+
+li.cart span {
+    position: absolute;
+    top: -3px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: red;
+    text-align: center;
+    line-height: 17px;
+    color: #fff;
+    border-radius: 50%;
 }

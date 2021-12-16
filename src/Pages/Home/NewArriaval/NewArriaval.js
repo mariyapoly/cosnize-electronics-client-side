@@ -1,11 +1,23 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import SingleProduct from '../../Share/SingleProduct/SingleProduct';
 import arivalthumb from '../../../images/arival-1.png';
 import arivalthumb2 from '../../../images/arival-2.png';
+import HomeProduct from '../../Share/HomeProduct/HomeProduct';
 import './NewArriaval.css'
 
 const NewArriaval = () => {
+
+
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:5000/allProduct')
+            .then(function (response) {
+                setProducts(response.data);
+            })
+    }, [])
+    const newPd = products.slice(0, 6);
+
     return (
         <div className='new-arrival-part'>
             <Container>
@@ -14,24 +26,12 @@ const NewArriaval = () => {
                         <div className='best-selling-products'>
                             <h5>New Arrivals</h5>
                             <Row>
-                                <Col lg={4}>
-                                    <SingleProduct></SingleProduct>
-                                </Col>
-                                <Col lg={4}>
-                                    <SingleProduct></SingleProduct>
-                                </Col>
-                                <Col lg={4}>
-                                    <SingleProduct></SingleProduct>
-                                </Col>
-                                <Col lg={4}>
-                                    <SingleProduct></SingleProduct>
-                                </Col>
-                                <Col lg={4}>
-                                    <SingleProduct></SingleProduct>
-                                </Col>
-                                <Col lg={4}>
-                                    <SingleProduct></SingleProduct>
-                                </Col>
+                                {
+                                    newPd.map(product => <HomeProduct
+                                        key={product._id}
+                                        product={product}
+                                    ></HomeProduct>)
+                                }
                             </Row>
                         </div>
                     </Col>

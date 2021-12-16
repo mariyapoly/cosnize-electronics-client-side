@@ -1,4 +1,4 @@
-const products = [
+const Tvproducts = [
 
     {
         name: 'VISION 32" LED TV M03 Ultimate',
@@ -198,6 +198,147 @@ const products = [
     }
 
 ]
+
+const homePagePd = [
+    {
+        name: 'Headphone Black',
+        img: 'https://i.ibb.co/Vg9RLyp/p-1.png',
+        price: '1250',
+        des1: 'Glossy outlook with User Friendly and Graphically Improved UI',
+        des2: '8 ohms 10 Watt*2 speaker',
+        des4: 'MVA Panel technology',
+        des5: 'Contrast ratio: 3000:1',
+        des6: 'Brightness-175 cd/m2',
+        des7: 'Resolution: 1366 x 768',
+        des8: '1xUSB & 2xHDMI supported',
+        Brands: 'VISION',
+        Availability: '150 In Stock',
+    },
+    {
+        name: 'Smartphone Apple',
+        img: 'https://i.ibb.co/x3nJZTW/p-2.png',
+        price: '1250',
+        des1: 'Glossy outlook with User Friendly and Graphically Improved UI',
+        des2: '8 ohms 10 Watt*2 speaker',
+        des4: 'MVA Panel technology',
+        des5: 'Contrast ratio: 3000:1',
+        des6: 'Brightness-175 cd/m2',
+        des7: 'Resolution: 1366 x 768',
+        des8: '1xUSB & 2xHDMI supported',
+        Brands: 'VISION',
+        Availability: '150 In Stock',
+    },
+    {
+        name: 'Camera Recording Support',
+        img: 'https://i.ibb.co/YR4LX2M/n-4.png',
+        price: '250',
+        des1: 'Glossy outlook with User Friendly and Graphically Improved UI',
+        des2: '8 ohms 10 Watt*2 speaker',
+        des4: 'MVA Panel technology',
+        des5: 'Contrast ratio: 3000:1',
+        des6: 'Brightness-175 cd/m2',
+        des7: 'Resolution: 1366 x 768',
+        des8: '1xUSB & 2xHDMI supported',
+        Brands: 'VISION',
+        Availability: '150 In Stock',
+    },
+    {
+        name: 'Canon Digital Camera W/ 42 ',
+        img: 'https://i.ibb.co/3s9Wpgg/n-5.png',
+        price: '290',
+        des1: 'Glossy outlook with User Friendly and Graphically Improved UI',
+        des2: '8 ohms 10 Watt*2 speaker',
+        des4: 'MVA Panel technology',
+        des5: 'Contrast ratio: 3000:1',
+        des6: 'Brightness-175 cd/m2',
+        des7: 'Resolution: 1366 x 768',
+        des8: '1xUSB & 2xHDMI supported',
+        Brands: 'VISION',
+        Availability: '150 In Stock',
+    },
+    {
+        name: 'Laptop & Computer',
+        img: 'https://i.ibb.co/CtHQKTh/p-1.png',
+        price: '2050',
+        des1: 'Glossy outlook with User Friendly and Graphically Improved UI',
+        des2: '8 ohms 10 Watt*2 speaker',
+        des4: 'MVA Panel technology',
+        des5: 'Contrast ratio: 3000:1',
+        des6: 'Brightness-175 cd/m2',
+        des7: 'Resolution: 1366 x 768',
+        des8: '1xUSB & 2xHDMI supported',
+        Brands: 'VISION',
+        Availability: '150 In Stock',
+    },
+    {
+        name: 'Smartphone Samsung S10',
+        img: 'https://i.ibb.co/gFqBGmT/p-2.png',
+        price: '1250',
+        des1: 'Glossy outlook with User Friendly and Graphically Improved UI',
+        des2: '8 ohms 10 Watt*2 speaker',
+        des4: 'MVA Panel technology',
+        des5: 'Contrast ratio: 3000:1',
+        des6: 'Brightness-175 cd/m2',
+        des7: 'Resolution: 1366 x 768',
+        des8: '1xUSB & 2xHDMI supported',
+        Brands: 'VISION',
+        Availability: '150 In Stock',
+    },
+    {
+        name: 'Endeavor Dryrip Backpack Zoom',
+        img: 'https://i.ibb.co/tKHFMHP/p-3.png',
+        price: '1250',
+        des1: 'Glossy outlook with User Friendly and Graphically Improved UI',
+        des2: '8 ohms 10 Watt*2 speaker',
+        des4: 'MVA Panel technology',
+        des5: 'Contrast ratio: 3000:1',
+        des6: 'Brightness-175 cd/m2',
+        des7: 'Resolution: 1366 x 768',
+        des8: '1xUSB & 2xHDMI supported',
+        Brands: 'VISION',
+        Availability: '150 In Stock',
+    },
+    {
+        name: 'Smartwatch Backpack Zoom',
+        img: 'https://i.ibb.co/2WjCW5R/p-3.png',
+        price: '1250',
+        des1: 'Glossy outlook with User Friendly and Graphically Improved UI',
+        des2: '8 ohms 10 Watt*2 speaker',
+        des4: 'MVA Panel technology',
+        des5: 'Contrast ratio: 3000:1',
+        des6: 'Brightness-175 cd/m2',
+        des7: 'Resolution: 1366 x 768',
+        des8: '1xUSB & 2xHDMI supported',
+        Brands: 'VISION',
+        Availability: '150 In Stock',
+    },
+    {
+        name: 'Headphone Black',
+        img: 'https://i.ibb.co/zxq8BJY/n-3.png',
+        price: '350',
+        des1: 'Glossy outlook with User Friendly and Graphically Improved UI',
+        des2: '8 ohms 10 Watt*2 speaker',
+        des4: 'MVA Panel technology',
+        des5: 'Contrast ratio: 3000:1',
+        des6: 'Brightness-175 cd/m2',
+        des7: 'Resolution: 1366 x 768',
+        des8: '1xUSB & 2xHDMI supported',
+        Brands: 'VISION',
+        Availability: '150 In Stock',
+    },
+]
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

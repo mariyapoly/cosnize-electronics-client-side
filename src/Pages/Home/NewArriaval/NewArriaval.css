@@ -51,3 +51,15 @@ button.shoping-btn {
     margin-bottom: 15px;
     font-size: 24px;
 }
+.best-selling-products .single-product {
+    padding: 13px;
+}
+.best-selling-products .single-pd-thumb {
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+.best-selling-products .single-pd-thumb img {
+    width: 90px;
+    height: 136px;
+}

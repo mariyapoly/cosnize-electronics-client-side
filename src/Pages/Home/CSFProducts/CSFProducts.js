@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
-import SingleProduct from '../../Share/SingleProduct/SingleProduct';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import pd1 from '../../../images/t_1.png';
@@ -8,14 +7,29 @@ import pd2 from '../../../images/t_2.png';
 import pd3 from '../../../images/t_3.png';
 import pd4 from '../../../images/t_4.png';
 import './CSFProducts.css'
+import axios from 'axios';
+import HomeProduct from '../../Share/HomeProduct/HomeProduct';
 
 const CSFProducts = () => {
+
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:5000/allProduct')
+            .then(function (response) {
+                setProducts(response.data);
+            })
+    }, [])
+
+    const computerPd = products.slice(6, 9);
+    const onsalePd = products.slice(0, 3);
+    const featurePd = products.slice(4, 7);
+
     return (
         <div>
             <Container>
                 <Row>
                     <Col lg={8}>
-                        <div className='secton-border'>
+                        <div className='secton-border best-selling-products'>
                             <Tabs
                                 defaultActiveKey="home"
                                 transition={false}
@@ -24,32 +38,34 @@ const CSFProducts = () => {
                             >
                                 <Tab eventKey="home" title="computer">
                                     <Row>
-                                        <Col lg={4}>
-                                            <SingleProduct></SingleProduct>
-                                        </Col>
-                                        <Col lg={4}>
-                                            <SingleProduct></SingleProduct>
-                                        </Col>
-                                        <Col lg={4}>
-                                            <SingleProduct></SingleProduct>
-                                        </Col>
+                                        {
+                                            computerPd.map(product => <HomeProduct
+                                                key={product._id}
+                                                product={product}
+                                            ></HomeProduct>)
+                                        }
                                     </Row>
                                 </Tab>
                                 <Tab eventKey="profile" title="onsale">
                                     <Row>
-                                        <Col lg={4}>
-                                            <SingleProduct></SingleProduct>
-                                        </Col>
-                                        <Col lg={4}>
-                                            <SingleProduct></SingleProduct>
-                                        </Col>
+                                        <Row>
+                                            {
+                                                onsalePd.map(product => <HomeProduct
+                                                    key={product._id}
+                                                    product={product}
+                                                ></HomeProduct>)
+                                            }
+                                        </Row>
                                     </Row>
                                 </Tab>
                                 <Tab eventKey="contact" title="featured" >
                                     <Row>
-                                        <Col lg={4}>
-                                            <SingleProduct></SingleProduct>
-                                        </Col>
+                                        {
+                                            featurePd.map(product => <HomeProduct
+                                                key={product._id}
+                                                product={product}
+                                            ></HomeProduct>)
+                                        }
                                     </Row>
                                 </Tab>
                             </Tabs>
