@@ -19,7 +19,7 @@ const Orders = () => {
 
 
     return (
-        <div className='order-part'>
+        <div className='order-part product-table'>
             <h4>My Orders</h4>
             <Table bordered responsive>
                 <thead>

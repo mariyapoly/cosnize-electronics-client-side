@@ -1,21 +1,16 @@
 
-.order-part h4 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 25px;
-}
-.order-part td {
+.product-table td {
     text-align: center;
     line-height: 136px;
     font-size: 14px;
 }
-.order-part thead {
+.product-table thead {
     text-align: center;
 }
-.order-part .table>:not(:first-child) {
+.product-table .table>:not(:first-child) {
     border-top: 0;
 }
-.order-part th {
+.product-table th {
     color: #222;
     font-size: 14px;
     font-weight: 500;
@@ -25,4 +20,10 @@ button.delete-btn {
     border: 0;
     color: red;
     font-weight: 500;
+}
+.order-part .order {
+    display: none;
+}
+.order-part .btn2 {
+    display: none;
 }

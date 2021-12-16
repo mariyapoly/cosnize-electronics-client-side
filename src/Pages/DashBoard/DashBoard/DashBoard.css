@@ -13,3 +13,8 @@
     list-style: none;
     padding: 0;
 }
+.dashborad-right h4 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}

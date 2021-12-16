@@ -1,0 +1,10 @@
+
+.wishList-part button.cart-btn {
+    line-height: 1.3;
+}
+.wishList-part td.status {
+    display: none;
+}
+.wishList-part .btn1 {
+    display: none;
+}

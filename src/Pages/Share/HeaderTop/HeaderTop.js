@@ -13,6 +13,7 @@ import axios from 'axios';
 const HeaderTop = () => {
 
     const [products, setProducts] = useState([])
+    const [wishProducts, setWishProducts] = useState([])
     const navigate = useNavigate();
     const { signOutUser, user } = useAuth();
     const logOut = () => {
@@ -26,8 +27,18 @@ const HeaderTop = () => {
             })
     }, [products, user.email])
 
+    useEffect(() => {
+        axios.get(`http://localhost:5000/wishListProduct/${user.email}`)
+            .then(function (response) {
+                setWishProducts(response.data);
+            })
+    }, [products, user.email])
+
     const handleCartBtn = () => {
         navigate('/dashboard/orders')
+    }
+    const handlewishBtn = () => {
+        navigate('/dashboard/wishlist')
     }
 
     return (
@@ -80,8 +91,9 @@ const HeaderTop = () => {
                         <Col lg={3}>
                             <div className="cart-thumb">
                                 <ul>
-                                    <li>
+                                    <li className='cart' onClick={handlewishBtn}>
                                         <img src={hart} alt="hart" />
+                                        <span>{wishProducts.length}</span>
                                     </li>
                                     <li className='cart' onClick={handleCartBtn}>
                                         <img src={cart} alt="cart" />
