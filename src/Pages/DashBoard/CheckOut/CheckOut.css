@@ -1,0 +1,41 @@
+.checkout h5 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #fff;
+    background-color: #343F6B;
+    padding: 10px;
+}
+.checkout td {
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color: #666666;
+}
+.checkout th {
+    color: #222;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+.checkout .table>:not(:first-child) {
+    border-top: 0;
+}
+.sub-total {
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #EBEBEB;
+    padding-top: 10px;
+}
+.sub-total p {
+    width: 75%;
+    font-size: 14px;
+    color: #222;
+    font-weight: 500;
+}
+.sub-total span {
+    width: 25%;
+    font-size: 14px;
+    color: #222;
+    font-weight: 500;
+}

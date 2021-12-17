@@ -1,0 +1,9 @@
+
+.pd-input {
+    width: 50%;
+    display: inline-block;
+}
+input.submit-btn.add-pd {
+    width: 140px;
+    height: 40px;
+}

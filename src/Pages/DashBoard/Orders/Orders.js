@@ -1,21 +1,21 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import useAuth from '../../../hooks/useAuth';
+
+import React from 'react';
 import Table from 'react-bootstrap/Table';
 import './Orders.css'
 import SingleOrder from '../SingleOrder/SingleOrder';
+import { useNavigate } from 'react-router-dom';
+import useOrder from '../../../hooks/useOrder';
 
 
 const Orders = () => {
 
-    const [products, setProducts] = useState([])
-    const { user } = useAuth();
-    useEffect(() => {
-        axios.get(`http://localhost:5000/cartProduct/${user.email}`)
-            .then(function (response) {
-                setProducts(response.data);
-            })
-    }, [products, user.email])
+    const navigate = useNavigate();
+    const { products } = useOrder();
+
+
+    const handleCheckOutBtn = () => {
+        navigate('/dashboard/checkOut')
+    }
 
 
     return (
@@ -39,10 +39,9 @@ const Orders = () => {
                         ></SingleOrder>
                         )
                     }
-
                 </tbody>
             </Table>
-
+            <button onClick={handleCheckOutBtn} className='checkout-btn'>checkout</button>
         </div >
     );
 };

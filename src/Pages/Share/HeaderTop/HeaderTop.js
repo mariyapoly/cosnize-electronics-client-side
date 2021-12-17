@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Col, Container, NavDropdown, Row } from 'react-bootstrap';
 import './HeaderTop.css';
 import logo from '../../../images/logo.png';
@@ -8,31 +8,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import axios from 'axios';
+import useOrder from '../../../hooks/useOrder';
 
 const HeaderTop = () => {
 
-    const [products, setProducts] = useState([])
-    const [wishProducts, setWishProducts] = useState([])
+
     const navigate = useNavigate();
     const { signOutUser, user } = useAuth();
     const logOut = () => {
         signOutUser();
     }
 
-    useEffect(() => {
-        axios.get(`http://localhost:5000/cartProduct/${user.email}`)
-            .then(function (response) {
-                setProducts(response.data);
-            })
-    }, [products, user.email])
+    const { products, wishProducts } = useOrder();
 
-    useEffect(() => {
-        axios.get(`http://localhost:5000/wishListProduct/${user.email}`)
-            .then(function (response) {
-                setWishProducts(response.data);
-            })
-    }, [products, user.email])
 
     const handleCartBtn = () => {
         navigate('/dashboard/orders')
@@ -58,7 +46,7 @@ const HeaderTop = () => {
                                     {
                                         user.email && <> <li>
                                             <NavDropdown title="My account" id="basic-nav-dropdown">
-                                                <NavLink end to="/dashboard">Dashboard</NavLink>
+                                                <NavLink end to="/dashboard/HomeDashboard">Dashboard</NavLink>
                                                 <button className='logout-btn' onClick={logOut}>Sign Out</button>
                                             </NavDropdown>
                                         </li>

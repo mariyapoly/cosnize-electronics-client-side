@@ -6,24 +6,32 @@ import './DashBoard.css'
 
 const DashBoard = () => {
 
-    const { user } = useAuth();
+    const { user, isAdmin } = useAuth();
+
 
     return (
         <div className='dashboard'>
             <Container>
                 <Row>
-                    <Col lg={3}>
+                    <Col lg={2}>
                         <div className="dashboard-left">
                             <p>Hello, {user.displayName}</p>
-                            <ul>
-                                <li><NavLink end to="/dashboard/orders">My Orders</NavLink></li>
-                                <li><NavLink end to="/dashboard/reviews">My Reviews</NavLink></li>
-                                <li><NavLink end to="/dashboard/wishlist">My Wishlist</NavLink></li>
-                                <li><NavLink end to="/dashboard/payment">My Payment</NavLink></li>
-                            </ul>
+                            {
+                                user.email && isAdmin ? <ul>
+                                    <li><NavLink end to="/dashboard/ManageAllOrders">Manage All Orders</NavLink></li>
+                                    <li><NavLink end to="/dashboard/AddHomeProduct">Add Home Product</NavLink></li>
+                                    <li><NavLink end to="/dashboard/ManageAllProducts">Manage All Products</NavLink></li>
+                                    <li><NavLink end to="/dashboard/MakeAdmin">Make Admin</NavLink></li>
+                                </ul> : <ul>
+                                    <li><NavLink end to="/dashboard/orders">My Orders</NavLink></li>
+                                    <li><NavLink end to="/dashboard/reviews">My Reviews</NavLink></li>
+                                    <li><NavLink end to="/dashboard/wishlist">My Wishlist</NavLink></li>
+                                </ul>
+                            }
+
                         </div>
                     </Col>
-                    <Col lg={9}>
+                    <Col lg={10}>
                         <div className="dashborad-right">
                             <Outlet></Outlet>
                         </div>

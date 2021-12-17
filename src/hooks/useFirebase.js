@@ -1,3 +1,4 @@
+import axios from "axios";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/LogInForm/Firebase/firebase.init";
@@ -9,6 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState('')
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(true);
     const auth = getAuth();
 
     // create user using email password
@@ -19,7 +21,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name }
                 setUser(newUser);
                 navigate('/')
-
+                saveduser(email, name)
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
@@ -52,7 +54,7 @@ const useFirebase = () => {
         }).catch((error) => {
         });
     }
-
+    // observed user state change
     useEffect(() => {
         setIsLoading(true)
         const unsubscribed = onAuthStateChanged(auth, (user) => {
@@ -67,6 +69,26 @@ const useFirebase = () => {
         return () => unsubscribed;
 
     }, [auth])
+    // saved user database
+    const saveduser = (email, name) => {
+        axios.post('http://localhost:5000/user', {
+            email: email,
+            displayName: name
+        })
+            .then(function (response) {
+            })
+    }
+    // check Admin
+    useEffect(() => {
+        axios.get(`http://localhost:5000/makeAdmin/${user.email}`)
+            .then(function (response) {
+                if (response.data.role === 'admin') {
+                    setIsAdmin(true);
+                } else {
+                    setIsAdmin(false)
+                }
+            })
+    }, [user.email])
 
     return {
         user,
@@ -74,7 +96,8 @@ const useFirebase = () => {
         createUserEmailPassword,
         loginUserWithEmailPassword,
         signOutUser,
-        isLoading
+        isLoading,
+        isAdmin
     }
 
 

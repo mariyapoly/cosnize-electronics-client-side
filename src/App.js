@@ -21,6 +21,12 @@ import Payment from './Pages/DashBoard/Payment/Payment';
 import WishList from './Pages/DashBoard/WishList/WishList';
 import Reviews from './Pages/DashBoard/Reviews/Reviews';
 import Orders from './Pages/DashBoard/Orders/Orders';
+import CheckOut from './Pages/DashBoard/CheckOut/CheckOut';
+import ManageAllOrders from './Pages/DashBoard/ManageAllOrders/ManageAllOrders';
+import AddHomeProduct from './Pages/DashBoard/AddHomeProduct/AddHomeProduct';
+import ManageAllProducts from './Pages/DashBoard/ManageAllProducts/ManageAllProducts';
+import MakeAdmin from './Pages/DashBoard/MakeAdmin/MakeAdmin';
+import HomeDashboard from './Pages/DashBoard/HomeDashboard/HomeDashboard';
 
 function App() {
   return (
@@ -35,10 +41,16 @@ function App() {
           <Route path="/camera" element={<CameraAllProducts />} />
           <Route path="/television" element={<TvAllProducts />} />
           <Route path="/dashboard" element={<PrivateRoute><DashBoard /></PrivateRoute>} >
+            <Route path={`/dashboard/HomeDashboard`} element={<HomeDashboard />} />
             <Route path={`/dashboard/payment`} element={<Payment />} />
             <Route path={`/dashboard/wishlist`} element={<WishList />} />
             <Route path={`/dashboard/reviews`} element={<Reviews />} />
             <Route path={`/dashboard/orders`} element={<Orders />} />
+            <Route path={`/dashboard/checkOut`} element={<CheckOut />} />
+            <Route path={`/dashboard/ManageAllOrders`} element={<ManageAllOrders />} />
+            <Route path={`/dashboard/AddHomeProduct`} element={<AddHomeProduct />} />
+            <Route path={`/dashboard/ManageAllProducts`} element={<ManageAllProducts />} />
+            <Route path={`/dashboard/MakeAdmin`} element={<MakeAdmin />} />
           </Route>
           <Route path="/ProductsDetails/:id" element={<PrivateRoute><ProductsDetails /></PrivateRoute>} />
 

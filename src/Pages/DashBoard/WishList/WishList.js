@@ -1,24 +1,18 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+
+import React from 'react';
 import { Table } from 'react-bootstrap';
-import useAuth from '../../../hooks/useAuth';
+import useOrder from '../../../hooks/useOrder';
 import SingleOrder from '../SingleOrder/SingleOrder';
 import './WishList.css'
 
 const WishList = () => {
-    const [products, setProducts] = useState([])
-    const { user } = useAuth();
-    useEffect(() => {
-        axios.get(`http://localhost:5000/wishListProduct/${user.email}`)
-            .then(function (response) {
-                setProducts(response.data);
-            })
-    }, [products, user.email])
+
+    const { wishProducts } = useOrder();
 
 
     return (
         <div className='wishList-part product-table'>
-            <h4>My Orders</h4>
+            <h4>My Wishlist</h4>
             <Table bordered responsive>
                 <thead>
                     <tr>
@@ -31,7 +25,7 @@ const WishList = () => {
                 </thead>
                 <tbody>
                     {
-                        products.map(product => <SingleOrder
+                        wishProducts.map(product => <SingleOrder
                             key={product._id}
                             product={product}
                         ></SingleOrder>

@@ -27,3 +27,6 @@
     display: block;
     opacity: 1;
 }
+button.delete-pd-btn.cart-btn{
+    display: none;
+}
