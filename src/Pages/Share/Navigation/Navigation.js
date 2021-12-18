@@ -19,7 +19,6 @@ const Navigation = () => {
                         <NavLink end to="/">HOME</NavLink>
                         <NavLink end to="/aboutUs">AOBUT US</NavLink>
                         <NavLink end to="/">CONTACT US</NavLink>
-                        <NavLink end to="/">BLOG</NavLink>
                         <NavLink end to="/Shope">SHOP</NavLink>
                     </Nav>
                     <div className="call-area">
