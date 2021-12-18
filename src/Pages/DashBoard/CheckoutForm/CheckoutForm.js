@@ -107,92 +107,93 @@ const CheckoutForm = ({ total, id, products, sum, shipping }) => {
 
     // onSubmit={handleSubmit} 
 
-    return (< div className='checkout'>
+    return (
+        < div className='checkout'>
 
-        <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
-            <Row>
-                <Col lg={6}>
-                    <div className="billing-address">
-                        <h5>BILLING DETAILS</h5>
-                        <label htmlFor="name">Your Name  *</label>
-                        <input required id='name' name='name' />
-                        <label htmlFor="company">Company Name </label>
-                        <input id='company' />
-                        <label htmlFor="country">Country  *</label>
-                        <input required id='country ' />
-                        <label htmlFor="street">Street address * </label>
-                        <input required id='street ' />
-                        <label htmlFor="town">Town / City * </label>
-                        <input required id='town ' />
-                        <label htmlFor="phone">Phone * </label>
-                        <input required id='phone' />
-                        <label htmlFor="email">Username or email  *</label>
-                        <input required id='email' />
-                        <label htmlFor="note">Order Note</label>
-                        <input required id='note' />
-                    </div>
-                </Col>
-                <Col lg={6}>
-                    <div className="order-total">
-                        <h5>YOUR ORDER</h5>
-                        <Table bordered responsive>
-                            <thead>
-                                <tr>
-                                    <th>Product Name</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    products.map(product => <tr key={product._id}>
-                                        {
-                                            !product.payment && <>
-                                                <td>{product.name}</td>
-                                                <td>${product.price}</td>
-                                            </>
-                                        }
-
-                                    </tr>
-                                    )
-                                }
-                            </tbody>
-                        </Table>
-                        <div className="cost-total">
-                            <div className='sub-total'><p>Cart Subtotal:</p> <span>${sum}</span></div>
-                            <div className='sub-total'><p>Shipping:</p> <span>${shipping}</span></div>
-                            <div className='sub-total'><p>Order Total:</p> <span>${total}</span></div>
+                <Row>
+                    <Col lg={6}>
+                        <div className="billing-address">
+                            <h5>BILLING DETAILS</h5>
+                            <label htmlFor="name">Your Name  *</label>
+                            <input required id='name' name='name' />
+                            <label htmlFor="company">Company Name </label>
+                            <input id='company' />
+                            <label htmlFor="country">Country  *</label>
+                            <input required id='country ' />
+                            <label htmlFor="street">Street address * </label>
+                            <input required id='street ' />
+                            <label htmlFor="town">Town / City * </label>
+                            <input required id='town ' />
+                            <label htmlFor="phone">Phone * </label>
+                            <input required id='phone' />
+                            <label htmlFor="email">Username or email  *</label>
+                            <input required id='email' />
+                            <label htmlFor="note">Order Note</label>
+                            <input required id='note' />
                         </div>
-                    </div>
-                </Col>
-            </Row>
-            <CardElement
-                options={{
-                    style: {
-                        base: {
-                            fontSize: '14px',
-                            color: '#666666',
-                            '::placeholder': {
+                    </Col>
+                    <Col lg={6}>
+                        <div className="order-total">
+                            <h5>YOUR ORDER</h5>
+                            <Table bordered responsive>
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        products.map(product => <tr key={product._id}>
+                                            {
+                                                !product.payment && <>
+                                                    <td>{product.name}</td>
+                                                    <td>${product.price}</td>
+                                                </>
+                                            }
+
+                                        </tr>
+                                        )
+                                    }
+                                </tbody>
+                            </Table>
+                            <div className="cost-total">
+                                <div className='sub-total'><p>Cart Subtotal:</p> <span>${sum}</span></div>
+                                <div className='sub-total'><p>Shipping:</p> <span>${shipping}</span></div>
+                                <div className='sub-total'><p>Order Total:</p> <span>${total}</span></div>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+                <CardElement
+                    options={{
+                        style: {
+                            base: {
+                                fontSize: '14px',
                                 color: '#666666',
+                                '::placeholder': {
+                                    color: '#666666',
+                                },
+                            },
+                            invalid: {
+                                color: '#9e2146',
                             },
                         },
-                        invalid: {
-                            color: '#9e2146',
-                        },
-                    },
-                }}
-            />
-            <button className='payment-btn' type="submit" disabled={!stripe || success}>Place order ${total}
-            </button>
-            {
-                error && <p style={{ color: 'red' }}>{error}</p>
-            }
-            {
-                success && <p style={{ color: 'green' }}>{success}</p>
-            }
+                    }}
+                />
+                <button className='payment-btn' type="submit" disabled={!stripe || success}>Place order ${total}
+                </button>
+                {
+                    error && <p style={{ color: 'red' }}>{error}</p>
+                }
+                {
+                    success && <p style={{ color: 'green' }}>{success}</p>
+                }
 
-        </form>
-    </div>
+            </form>
+        </div>
     );
 };
 

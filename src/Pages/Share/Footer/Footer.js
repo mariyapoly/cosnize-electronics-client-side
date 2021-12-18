@@ -10,7 +10,7 @@ const Footer = () => {
                     <Col lg={4} xs={12} sm={12}>
                         <div className="footer-widget">
                             <h5>contact us</h5>
-                            <p>It is a long established fact that reader will distract by the readable content of a page</p>
+                            <p>If your looking for a sales-oriented approach, you can use this one from IMPACT's Contact Us page.</p>
                             <ul>
                                 <li>218 Fifth Avenue, HeavenTower NewYork City</li>
                                 <li>(+12) 123 456 5890</li>

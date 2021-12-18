@@ -1,0 +1,23 @@
+.not-found {
+    text-align: center;
+    padding: 70px 0 80px;
+}
+
+.not-found h1 {
+    font-size: 90px;
+    color: #222;
+}
+
+.not-found p {
+    color: #666;
+}
+
+.not-found button {
+    width: 150px;
+    padding: 7px;
+    border: 0;
+    background: #343F6B;
+    color: #fff;
+    border-radius: 4px;
+    margin: 0 auto;
+}

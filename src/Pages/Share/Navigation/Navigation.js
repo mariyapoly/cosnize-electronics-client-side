@@ -18,7 +18,7 @@ const Navigation = () => {
                     <Nav className="m-auto">
                         <NavLink end to="/">HOME</NavLink>
                         <NavLink end to="/aboutUs">AOBUT US</NavLink>
-                        <NavLink end to="/">CONTACT US</NavLink>
+                        <NavLink end to="/contact">CONTACT US</NavLink>
                         <NavLink end to="/Shope">SHOP</NavLink>
                     </Nav>
                     <div className="call-area">

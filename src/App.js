@@ -29,6 +29,8 @@ import MakeAdmin from './Pages/DashBoard/MakeAdmin/MakeAdmin';
 import HomeDashboard from './Pages/DashBoard/HomeDashboard/HomeDashboard';
 import Shope from './Pages/Shope/Shope';
 import CameraProducts from './Pages/CategoryProducts/CategoryProducts/CameraProducts';
+import ContactUs from './Pages/ContactUs/ContactUs';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -43,6 +45,7 @@ function App() {
           <Route path="/camera" element={<CameraAllProducts />} />
           <Route path="/television" element={<TvAllProducts />} />
           <Route path="/Shope" element={<Shope />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/dashboard" element={<PrivateRoute><DashBoard /></PrivateRoute>} >
             <Route path={`/dashboard/HomeDashboard`} element={<HomeDashboard />} />
             <Route path={`/dashboard/payment`} element={<Payment />} />
@@ -57,7 +60,7 @@ function App() {
           </Route>
           <Route path="/ProductsDetails/:id" element={<PrivateRoute><ProductsDetails /></PrivateRoute>} />
           <Route path="/CameraProducts/:id" element={<PrivateRoute><CameraProducts /></PrivateRoute>} />
-
+          <Route path="/*" element={<NotFound />} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
