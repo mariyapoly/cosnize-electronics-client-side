@@ -1,18 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useParams, NavLink } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
+import { NavLink, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
-import './ProductsDetails.css'
+import useAuth from '../../../hooks/useAuth';
 
-const ProductsDetails = () => {
+const CameraProducts = () => {
 
     const { id } = useParams();
     const { user } = useAuth();
     const [products, setProducts] = useState({})
     useEffect(() => {
-        axios.get(`http://localhost:5000/allProduct/${id}`)
+        axios.get(`http://localhost:5000/cameraProduct/${id}`)
             .then(function (response) {
                 setProducts(response.data);
             })
@@ -27,7 +26,6 @@ const ProductsDetails = () => {
             status: 'pending',
         })
             .then(function (response) {
-
                 if (response.data.insertedId) {
                     swal("Product saved to order Cart");
                 }
@@ -75,4 +73,4 @@ const ProductsDetails = () => {
     );
 };
 
-export default ProductsDetails;
+export default CameraProducts;

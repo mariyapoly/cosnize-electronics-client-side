@@ -7,3 +7,10 @@ input.submit-btn.add-pd {
     width: 140px;
     height: 40px;
 }
+
+/* media query */
+@media only screen and (max-width: 575px) {
+    .pd-input {
+        width: 100%;
+    }
+}

@@ -16,22 +16,22 @@ const Brand = () => {
                     <Col lg={12}>
                         <div className="secton-border brand-part">
                             <Row>
-                                <Col lg={2}>
+                                <Col lg={2} xs={6} sm={6}>
                                     <img src={brand1} alt="" />
                                 </Col>
-                                <Col lg={2}>
+                                <Col lg={2} xs={6} sm={6}>
                                     <img src={brand2} alt="" />
                                 </Col>
-                                <Col lg={2}>
+                                <Col lg={2} xs={6} sm={6}>
                                     <img src={brand3} alt="" />
                                 </Col>
-                                <Col lg={2}>
+                                <Col lg={2} xs={6} sm={6}>
                                     <img src={brand4} alt="" />
                                 </Col>
-                                <Col lg={2}>
+                                <Col lg={2} xs={6} sm={6}>
                                     <img src={brand5} alt="" />
                                 </Col>
-                                <Col lg={2}>
+                                <Col lg={2} xs={6} sm={6}>
                                     <img src={brand6} alt="" />
                                 </Col>
                             </Row>

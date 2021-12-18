@@ -17,6 +17,12 @@ const Orders = () => {
         navigate('/dashboard/checkOut')
     }
 
+    let payment = null;
+
+    products.forEach(pd => {
+        payment = pd.payment
+    })
+
 
     return (
         <div className='order-part product-table'>
@@ -29,6 +35,7 @@ const Orders = () => {
                         <th>Product Name</th>
                         <th>Unit Price</th>
                         <th>status</th>
+                        <th>Payment</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,7 +48,9 @@ const Orders = () => {
                     }
                 </tbody>
             </Table>
-            <button onClick={handleCheckOutBtn} className='checkout-btn'>checkout</button>
+            {
+                payment ? <button disabled className='checkout-btn'>checkout</button> : <button onClick={handleCheckOutBtn} className='checkout-btn'>checkout</button>
+            }
         </div >
     );
 };

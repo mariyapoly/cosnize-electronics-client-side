@@ -43,3 +43,42 @@
     border-top: 1px solid #EBEBEB;
     padding-top: 12px;
 }
+
+.swal-button {
+    background-color: #5677FC;
+    padding: 3px 19px;
+}
+.swal-text:first-child {
+    margin-top: 23px;
+}
+.swal-footer {
+    margin-top: 0;
+    padding: 6px 16px;
+}
+.swal-button--cancel {
+    color: #222;
+}
+.swal-icon {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+    margin: 2px auto;
+}
+.swal-icon--warning__body {
+    height: 17px;
+    top: 6px;
+    width: 3px;
+}
+.swal-title {
+    color: #222;
+    font-weight: 500;
+    padding: 2px 16px;
+    font-size: 19px;
+}
+.swal-text {
+    font-size: 14px;
+    color: #666;
+}
+.swal-icon:first-child {
+    margin-top: 15px;
+}

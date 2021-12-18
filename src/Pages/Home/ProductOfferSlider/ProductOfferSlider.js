@@ -9,6 +9,7 @@ import pd1 from '../../../images/product-1.png';
 import pd2 from '../../../images/product-2.png';
 import pd3 from '../../../images/product-3.png';
 import './ProductOfferSlider.css'
+import { useNavigate } from 'react-router-dom';
 
 
 const ProductOfferSlider = () => {
@@ -18,6 +19,7 @@ const ProductOfferSlider = () => {
     const [timeHours, setTimeHours] = useState('00');
     const [timeMinutes, setTimeMinutes] = useState('00');
     const [timeSeconds, setTimeSeconds] = useState('00');
+    const navigate = useNavigate();
 
     let interval = useRef();
     // function for countdown 
@@ -50,7 +52,9 @@ const ProductOfferSlider = () => {
         }
     }, [])
 
-
+    const handleCartBtn = () => {
+        navigate('/Shope')
+    }
 
 
     return (
@@ -76,9 +80,9 @@ const ProductOfferSlider = () => {
                                     <span className="price">$165.00</span>
                                     <p>It is a long established fact that a reader will be distracted by the readable when looking at its layout. The point of using make sure</p>
                                     <div>
-                                        <button className='cart-btn'>Add To Cart</button>
-                                        <button className='whislist-btn'><img src={hart} alt="hart" /></button>
-                                        <button className='quick-veiw-btn'><img src={view} alt="hart" /></button>
+                                        <button onClick={handleCartBtn} className='cart-btn'>Add To Cart</button>
+                                        <button onClick={handleCartBtn} className='whislist-btn'><img src={hart} alt="hart" /></button>
+                                        <button onClick={handleCartBtn} className='quick-veiw-btn'><img src={view} alt="hart" /></button>
                                     </div>
                                     <div className='count-down'>
                                         <div className="single-count">

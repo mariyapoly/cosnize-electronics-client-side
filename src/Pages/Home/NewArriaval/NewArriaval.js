@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import arivalthumb from '../../../images/arival-1.png';
 import arivalthumb2 from '../../../images/arival-2.png';
 import HomeProduct from '../../Share/HomeProduct/HomeProduct';
@@ -17,6 +18,13 @@ const NewArriaval = () => {
             })
     }, [])
     const newPd = products.slice(0, 6);
+
+    const navigate = useNavigate();
+
+    const handleShoppingBtn = () => {
+        navigate('/Shope')
+    }
+
 
     return (
         <div className='new-arrival-part'>
@@ -42,7 +50,7 @@ const NewArriaval = () => {
                                 <div className="arrival-content">
                                     <span>up to 10% off in store</span>
                                     <h5>Headphone All New 2021 </h5>
-                                    <button className='shoping-btn'>Shop Now</button>
+                                    <button onClick={handleShoppingBtn} className='shoping-btn'>Shop Now</button>
                                 </div>
                             </div>
                             <div className="arrival-thumn1 arrival-content2">
@@ -50,7 +58,7 @@ const NewArriaval = () => {
                                 <div className="arrival-content">
                                     <span>on the weekend</span>
                                     <h5>Now Black Friday</h5>
-                                    <button className='shoping-btn'>Shop Now</button>
+                                    <button onClick={handleShoppingBtn} className='shoping-btn'>Shop Now</button>
                                 </div>
                             </div>
                         </div>

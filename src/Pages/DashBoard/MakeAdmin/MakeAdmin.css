@@ -7,3 +7,9 @@
 .make-admin {
     text-align: center;
 }
+/* media query */
+@media only screen and (max-width: 575px) {
+    .make-admin form input {
+        width: 85%;
+    }
+}

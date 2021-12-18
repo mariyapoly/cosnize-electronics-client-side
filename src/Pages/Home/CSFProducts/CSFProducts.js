@@ -9,6 +9,7 @@ import pd4 from '../../../images/t_4.png';
 import './CSFProducts.css'
 import axios from 'axios';
 import HomeProduct from '../../Share/HomeProduct/HomeProduct';
+import { useNavigate } from 'react-router-dom';
 
 const CSFProducts = () => {
 
@@ -23,6 +24,13 @@ const CSFProducts = () => {
     const computerPd = products.slice(6, 9);
     const onsalePd = products.slice(0, 3);
     const featurePd = products.slice(4, 7);
+
+    const navigate = useNavigate();
+
+    const handleShoppingBtn = () => {
+        navigate('/Shope')
+    }
+
 
     return (
         <div>
@@ -73,7 +81,7 @@ const CSFProducts = () => {
                         <div className="products-price-off">
                             <p>On All Apple Products</p>
                             <h5>Save Up To 40% Off</h5>
-                            <button className='cart-btn'>Shop Now</button>
+                            <button onClick={handleShoppingBtn} className='cart-btn'>Shop Now</button>
                         </div>
                     </Col>
                     <Col lg={4}>

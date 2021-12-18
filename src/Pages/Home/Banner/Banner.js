@@ -1,11 +1,19 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import heroImg1 from '../../../images/hero_1.png';
 import heroImg2 from '../../../images/hero_2.png';
 import heroImg3 from '../../../images/hero_3.png';
 import './Banner.css'
 
 const Banner = () => {
+
+    const navigate = useNavigate();
+
+    const handleShoppingBtn = () => {
+        navigate('/Shope')
+    }
+
     return (
         <div className='banner-part'>
             <Container>
@@ -15,7 +23,7 @@ const Banner = () => {
                             <div className="slider-content">
                                 <h1>Modern And Just<span> Captivating</span></h1>
                                 <p>The most important upgrades of Xbox One S are a new controller and cross-play with PC.</p>
-                                <button>Shopping Now</button>
+                                <button onClick={handleShoppingBtn}>Shopping Now</button>
                             </div>
                             <div className="slider-thumb">
                                 <img src={heroImg1} alt="" />

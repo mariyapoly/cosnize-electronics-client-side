@@ -50,3 +50,11 @@ button.cart-btn.view-btn-hover {
 .single-top-pd:hover button.cart-btn.view-btn-hover {
     opacity: 1;
 }
+/* media query */
+@media only screen and (max-width: 575px) {
+    .single-top-pd {
+        margin-bottom: 15px;
+    }
+}
+
+

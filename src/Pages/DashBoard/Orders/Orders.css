@@ -33,4 +33,12 @@ button.checkout-btn {
     background: #5677FC;
     color: #fff;
     border-radius: 4px;
+    text-transform: uppercase;
+}
+button.checkout-btn:disabled {
+    background-color: rgb(189, 184, 184);
+    color: #666;
+}
+.product-table td img {
+    height: 80px;
 }

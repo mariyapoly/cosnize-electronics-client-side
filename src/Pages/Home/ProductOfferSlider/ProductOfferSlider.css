@@ -105,3 +105,15 @@ button.whislist-btn, button.quick-veiw-btn {
 .single-selling-pd .rating {
     margin-bottom: 2px;
 }
+
+/* media query */
+@media only screen and (max-width: 575px) {
+    .product-slider {
+        padding: 30px 10px 0 10px;
+        margin-bottom: 20px;
+    }
+    .product-caption {
+        width: 60%;
+        padding-left: 14px;
+    }
+}

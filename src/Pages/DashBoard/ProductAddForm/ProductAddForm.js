@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 import './ProductAddForm.css'
 
 const ProductAddForm = () => {
-    const { register, handleSubmit, } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         axios.post('http://localhost:5000/allProduct', {
             name: data.name,
@@ -22,6 +23,10 @@ const ProductAddForm = () => {
 
         })
             .then(function (response) {
+                if (response.data.insertedId) {
+                    swal("Product added successfully");
+                    reset();
+                }
             })
     };
 

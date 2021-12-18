@@ -1,14 +1,19 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 import './MakeAdmin.css'
 
 const MakeAdmin = () => {
 
-    const { register, handleSubmit, } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         axios.put(`http://localhost:5000/makeAdmin/${data.email}`)
             .then(function (response) {
+                if (response.data.modifiedCount) {
+                    swal("Make Admin Successfully");
+                    reset();
+                }
             })
     };
 

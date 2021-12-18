@@ -19,3 +19,12 @@
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
 }
+.manage-home-products .single-product:hover span.pricing {
+    opacity: 1;
+}
+/* media query */
+@media only screen and (max-width: 575px) {
+    .manage-home-products button.delete-pd-btn.cart-btn {
+        margin: 0 auto;
+    }
+}

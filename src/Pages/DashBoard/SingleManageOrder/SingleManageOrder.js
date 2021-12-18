@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import swal from 'sweetalert';
 import './SingleManageOrder.css'
 
 
@@ -9,13 +10,35 @@ const SingleManageOrder = ({ product }) => {
 
     const { img, name, price, status, _id, email } = product;
     const handleDeleteBtn = () => {
-        axios.delete(`http://localhost:5000/cartProduct/${_id}`)
-            .then(function (response) {
-            })
+
+        swal({
+            title: "Are you sure?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    axios.delete(`http://localhost:5000/cartProduct/${_id}`)
+                        .then(function (response) {
+                            if (response.datadeletedCount) {
+                                swal("Product Delete Successfully", {
+                                    icon: "success",
+                                });
+                            }
+                        })
+
+                } else {
+                    swal("Your Product is safe!");
+                }
+            });
     }
     const handleUpdatetBtn = () => {
-        axios.put(`http://localhost:5000/cartProduct/${_id}`)
+        axios.put(`http://localhost:5000/statusProduct/${_id}`)
             .then(function (response) {
+                if (response.data.modifiedCount) {
+                    swal("Product Status UpDated");
+                }
             })
     }
 

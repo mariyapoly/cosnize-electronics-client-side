@@ -81,3 +81,23 @@
     color: #FFFFFF;
     font-size: 15px;
 }
+/* media query */
+@media only screen and (max-width: 575px) {
+    .slider-content h1 {
+        font-size: 26px;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+    .slider-content p {
+        font-size: 13px;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+    .slider-left-thumb {
+        padding: 50px 20px 55px;
+        margin-bottom: 20px;
+    }
+    .slider-content button {
+        padding: 10px 20px;
+    }
+}

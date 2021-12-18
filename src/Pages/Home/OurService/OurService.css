@@ -28,3 +28,9 @@
     border: 1px solid #EBEBEB;
     padding: 50px 20px;
 }
+/* media query */
+@media only screen and (max-width: 575px) {
+    .songle-service {
+        margin-bottom: 20px;
+    }
+}

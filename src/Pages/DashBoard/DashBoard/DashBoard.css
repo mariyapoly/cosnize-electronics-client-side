@@ -18,3 +18,19 @@
     font-weight: 500;
     margin-bottom: 25px;
 }
+
+/* media query */
+@media only screen and (max-width: 575px) {
+    .dashboard-left {
+        margin-bottom: 20px;
+    }
+    .dashboard-left ul {
+        display: flex;
+    }
+    .dashboard-left ul li a {
+        margin-right: 30px;
+    }
+    .product-table td {
+        line-height: 1.5 !important;
+    }
+}

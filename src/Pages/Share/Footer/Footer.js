@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='footer-part'>
             <Container>
                 <Row>
-                    <Col lg={4}>
+                    <Col lg={4} xs={12} sm={12}>
                         <div className="footer-widget">
                             <h5>contact us</h5>
                             <p>It is a long established fact that reader will distract by the readable content of a page</p>
@@ -18,7 +18,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </Col>
-                    <Col lg={2}>
+                    <Col lg={2} xs={6} sm={6}>
                         <div className="footer-widget">
                             <h5>INFORMATION</h5>
                             <ul>
@@ -31,7 +31,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </Col>
-                    <Col lg={2}>
+                    <Col lg={2} xs={6} sm={6}>
                         <div className="footer-widget">
                             <h5>MY ACCOUNT</h5>
                             <ul>
@@ -44,7 +44,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </Col>
-                    <Col lg={2}>
+                    <Col lg={2} xs={6} sm={6}>
                         <div className="footer-widget">
                             <h5>Quick Links</h5>
                             <ul>
@@ -57,7 +57,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </Col>
-                    <Col lg={2}>
+                    <Col lg={2} xs={6} sm={6}>
                         <div className="footer-widget">
                             <h5>CUSTOMER SERVICE</h5>
                             <ul>

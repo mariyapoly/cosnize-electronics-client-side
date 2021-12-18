@@ -32,3 +32,9 @@
     border-top: 1px solid #707070;
     margin-top: 30px;
 }
+.footer-widget {
+    margin-bottom: 30px;
+}
+.copyright p {
+    font-size: 14px;
+}

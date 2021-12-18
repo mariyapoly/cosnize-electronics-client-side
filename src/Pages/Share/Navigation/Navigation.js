@@ -20,7 +20,7 @@ const Navigation = () => {
                         <NavLink end to="/aboutUs">AOBUT US</NavLink>
                         <NavLink end to="/">CONTACT US</NavLink>
                         <NavLink end to="/">BLOG</NavLink>
-                        <NavLink end to="/">SHOP</NavLink>
+                        <NavLink end to="/Shope">SHOP</NavLink>
                     </Nav>
                     <div className="call-area">
                         <img src={phone} alt="" />

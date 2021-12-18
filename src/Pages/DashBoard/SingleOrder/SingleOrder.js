@@ -1,20 +1,60 @@
 import axios from 'axios';
 import React from 'react';
+import swal from 'sweetalert';
 import useAuth from '../../../hooks/useAuth';
 
 const SingleOrder = ({ product }) => {
 
-    const { img, name, price, status, _id } = product;
+    const { img, name, price, status, _id, payment } = product;
     const { user } = useAuth();
     const handleDeleteBtn = () => {
-        axios.delete(`http://localhost:5000/cartProduct/${_id}`)
-            .then(function (response) {
-            })
+
+        swal({
+            title: "Are you sure?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    axios.delete(`http://localhost:5000/cartProduct/${_id}`)
+                        .then(function (response) {
+                            if (response.datadeletedCount) {
+                                swal("Product Delete Successfully", {
+                                    icon: "success",
+                                });
+                            }
+                        })
+
+                } else {
+                    swal("Your Product is safe!");
+                }
+            });
+
     }
     const handleDeleteBtn2 = () => {
-        axios.delete(`http://localhost:5000/wishListProduct/${_id}`)
-            .then(function (response) {
-            })
+
+        swal({
+            title: "Are you sure?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    axios.delete(`http://localhost:5000/wishListProduct/${_id}`)
+                        .then(function (response) {
+                            if (response.datadeletedCount) {
+                                swal("Product Delete Successfully", {
+                                    icon: "success",
+                                });
+                            }
+                        })
+
+                } else {
+                    swal("Your Product is safe!");
+                }
+            });
     }
     const handleCartBtn = () => {
         axios.post('http://localhost:5000/cartProduct', {
@@ -25,6 +65,9 @@ const SingleOrder = ({ product }) => {
             status: 'pending',
         })
             .then(function (response) {
+                if (response.data.insertedId) {
+                    swal("Product saved to order Cart");
+                }
             })
 
         axios.delete(`http://localhost:5000/wishListProduct/${_id}`)
@@ -40,6 +83,9 @@ const SingleOrder = ({ product }) => {
             <td>{name}</td>
             <td>${price}</td>
             <td className='status'>{status}</td>
+            <td className='status'>{
+                payment ? 'paid' : 'unpaid'
+            }</td>
             <td className='order'><button onClick={handleCartBtn} className='cart-btn'>Add To Cart</button></td>
         </tr>
     );

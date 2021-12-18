@@ -6,6 +6,7 @@ import hart from '../../../images/hart.png';
 import view from '../../../images/quick view.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import swal from 'sweetalert';
 import useAuth from '../../../hooks/useAuth';
 
 const HomeProduct = ({ product }) => {
@@ -29,6 +30,9 @@ const HomeProduct = ({ product }) => {
             email: user?.email,
         })
             .then(function (response) {
+                if (response.data.insertedId) {
+                    swal("Product saved to Whish List");
+                }
             })
     }
 

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import SingleProduct from '../../Share/SingleProduct/SingleProduct';
+import swal from 'sweetalert';
 import './ManageAllProducts.css'
 
 const ManageAllProducts = () => {
@@ -15,9 +16,33 @@ const ManageAllProducts = () => {
     }, [products])
 
     const handleDeletePd = (id) => {
-        axios.delete(`http://localhost:5000/allProduct/${id}`)
-            .then(function (response) {
-            })
+
+
+        swal({
+            title: "Are you sure?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    axios.delete(`http://localhost:5000/allProduct/${id}`)
+                        .then(function (response) {
+                            if (response.datadeletedCount) {
+                                swal("Product Delete Successfully", {
+                                    icon: "success",
+                                });
+                            }
+                        })
+
+                } else {
+                    swal("Your Product is safe!");
+                }
+            });
+
+        // axios.delete(`http://localhost:5000/allProduct/${id}`)
+        //     .then(function (response) {
+        //     })
     }
 
     return (

@@ -27,6 +27,8 @@ import AddHomeProduct from './Pages/DashBoard/AddHomeProduct/AddHomeProduct';
 import ManageAllProducts from './Pages/DashBoard/ManageAllProducts/ManageAllProducts';
 import MakeAdmin from './Pages/DashBoard/MakeAdmin/MakeAdmin';
 import HomeDashboard from './Pages/DashBoard/HomeDashboard/HomeDashboard';
+import Shope from './Pages/Shope/Shope';
+import CameraProducts from './Pages/CategoryProducts/CategoryProducts/CameraProducts';
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
           <Route path="/SignIn" element={<LogInForm />} />
           <Route path="/camera" element={<CameraAllProducts />} />
           <Route path="/television" element={<TvAllProducts />} />
+          <Route path="/Shope" element={<Shope />} />
           <Route path="/dashboard" element={<PrivateRoute><DashBoard /></PrivateRoute>} >
             <Route path={`/dashboard/HomeDashboard`} element={<HomeDashboard />} />
             <Route path={`/dashboard/payment`} element={<Payment />} />
@@ -53,6 +56,7 @@ function App() {
             <Route path={`/dashboard/MakeAdmin`} element={<MakeAdmin />} />
           </Route>
           <Route path="/ProductsDetails/:id" element={<PrivateRoute><ProductsDetails /></PrivateRoute>} />
+          <Route path="/CameraProducts/:id" element={<PrivateRoute><CameraProducts /></PrivateRoute>} />
 
         </Routes>
         <Footer></Footer>
