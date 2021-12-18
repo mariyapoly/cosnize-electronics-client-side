@@ -71,7 +71,7 @@ const useFirebase = () => {
     }, [auth])
     // saved user database
     const saveduser = (email, name) => {
-        axios.post('http://localhost:5000/user', {
+        axios.post('https://cryptic-hollows-56535.herokuapp.com/user', {
             email: email,
             displayName: name
         })
@@ -80,7 +80,7 @@ const useFirebase = () => {
     }
     // check Admin
     useEffect(() => {
-        axios.get(`http://localhost:5000/makeAdmin/${user.email}`)
+        axios.get(`https://cryptic-hollows-56535.herokuapp.com/makeAdmin/${user.email}`)
             .then(function (response) {
                 if (response.data.role === 'admin') {
                     setIsAdmin(true);

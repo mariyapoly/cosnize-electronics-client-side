@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import arivalthumb from '../../../images/arival-1.png';
 import arivalthumb2 from '../../../images/arival-2.png';
@@ -12,7 +12,7 @@ const NewArriaval = () => {
 
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/allProduct')
+        axios.get('https://cryptic-hollows-56535.herokuapp.com/allProduct')
             .then(function (response) {
                 setProducts(response.data);
             })
@@ -31,17 +31,21 @@ const NewArriaval = () => {
             <Container>
                 <Row>
                     <Col lg={8}>
-                        <div className='best-selling-products'>
-                            <h5>New Arrivals</h5>
-                            <Row>
-                                {
-                                    newPd.map(product => <HomeProduct
-                                        key={product._id}
-                                        product={product}
-                                    ></HomeProduct>)
-                                }
-                            </Row>
-                        </div>
+                        {
+                            products.length ?
+                                <div className='best-selling-products'>
+                                    <h5>New Arrivals</h5>
+                                    <Row>
+                                        {
+                                            newPd.map(product => <HomeProduct
+                                                key={product._id}
+                                                product={product}
+                                            ></HomeProduct>)
+                                        }
+                                    </Row>
+                                </div>
+                                : <Spinner animation="border" variant="primary" />
+                        }
                     </Col>
                     <Col lg={4}>
                         <div className="arrival-right">

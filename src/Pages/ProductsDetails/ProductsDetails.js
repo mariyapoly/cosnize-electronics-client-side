@@ -12,14 +12,14 @@ const ProductsDetails = () => {
     const { user } = useAuth();
     const [products, setProducts] = useState({})
     useEffect(() => {
-        axios.get(`http://localhost:5000/allProduct/${id}`)
+        axios.get(`https://cryptic-hollows-56535.herokuapp.com/allProduct/${id}`)
             .then(function (response) {
                 setProducts(response.data);
             })
     }, [id])
 
     const handleCartBtn = () => {
-        axios.post('http://localhost:5000/cartProduct', {
+        axios.post('https://cryptic-hollows-56535.herokuapp.com/cartProduct', {
             name: products?.name,
             img: products?.img,
             price: products?.price,

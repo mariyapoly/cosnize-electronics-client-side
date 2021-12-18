@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
+import { Col, Container, Row, Spinner, Tab, Tabs } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import pd1 from '../../../images/t_1.png';
@@ -15,7 +15,7 @@ const CSFProducts = () => {
 
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/allProduct')
+        axios.get('https://cryptic-hollows-56535.herokuapp.com/allProduct')
             .then(function (response) {
                 setProducts(response.data);
             })
@@ -37,47 +37,49 @@ const CSFProducts = () => {
             <Container>
                 <Row>
                     <Col lg={8}>
-                        <div className='secton-border best-selling-products'>
-                            <Tabs
-                                defaultActiveKey="home"
-                                transition={false}
-                                id="noanim-tab-example"
-                                className="mb-3"
-                            >
-                                <Tab eventKey="home" title="computer">
-                                    <Row>
-                                        {
-                                            computerPd.map(product => <HomeProduct
-                                                key={product._id}
-                                                product={product}
-                                            ></HomeProduct>)
-                                        }
-                                    </Row>
-                                </Tab>
-                                <Tab eventKey="profile" title="onsale">
-                                    <Row>
+                        {
+                            products.length ? <div className='secton-border best-selling-products'>
+                                <Tabs
+                                    defaultActiveKey="home"
+                                    transition={false}
+                                    id="noanim-tab-example"
+                                    className="mb-3"
+                                >
+                                    <Tab eventKey="home" title="computer">
                                         <Row>
                                             {
-                                                onsalePd.map(product => <HomeProduct
+                                                computerPd.map(product => <HomeProduct
                                                     key={product._id}
                                                     product={product}
                                                 ></HomeProduct>)
                                             }
                                         </Row>
-                                    </Row>
-                                </Tab>
-                                <Tab eventKey="contact" title="featured" >
-                                    <Row>
-                                        {
-                                            featurePd.map(product => <HomeProduct
-                                                key={product._id}
-                                                product={product}
-                                            ></HomeProduct>)
-                                        }
-                                    </Row>
-                                </Tab>
-                            </Tabs>
-                        </div>
+                                    </Tab>
+                                    <Tab eventKey="profile" title="onsale">
+                                        <Row>
+                                            <Row>
+                                                {
+                                                    onsalePd.map(product => <HomeProduct
+                                                        key={product._id}
+                                                        product={product}
+                                                    ></HomeProduct>)
+                                                }
+                                            </Row>
+                                        </Row>
+                                    </Tab>
+                                    <Tab eventKey="contact" title="featured" >
+                                        <Row>
+                                            {
+                                                featurePd.map(product => <HomeProduct
+                                                    key={product._id}
+                                                    product={product}
+                                                ></HomeProduct>)
+                                            }
+                                        </Row>
+                                    </Tab>
+                                </Tabs>
+                            </div> : <Spinner animation="border" variant="primary" />
+                        }
                         <div className="products-price-off">
                             <p>On All Apple Products</p>
                             <h5>Save Up To 40% Off</h5>

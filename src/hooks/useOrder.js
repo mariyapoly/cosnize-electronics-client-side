@@ -10,7 +10,7 @@ const useOrder = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/cartProduct/${user.email}`)
+        axios.get(`https://cryptic-hollows-56535.herokuapp.com/cartProduct/${user.email}`)
             .then(function (response) {
                 setProducts(response.data);
             })
@@ -18,7 +18,7 @@ const useOrder = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/wishListProduct/${user.email}`)
+        axios.get(`https://cryptic-hollows-56535.herokuapp.com/wishListProduct/${user.email}`)
             .then(function (response) {
                 setWishProducts(response.data);
             })

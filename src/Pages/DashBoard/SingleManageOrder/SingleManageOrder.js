@@ -19,7 +19,7 @@ const SingleManageOrder = ({ product }) => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`http://localhost:5000/cartProduct/${_id}`)
+                    axios.delete(`https://cryptic-hollows-56535.herokuapp.com/cartProduct/${_id}`)
                         .then(function (response) {
                             if (response.datadeletedCount) {
                                 swal("Product Delete Successfully", {
@@ -34,7 +34,7 @@ const SingleManageOrder = ({ product }) => {
             });
     }
     const handleUpdatetBtn = () => {
-        axios.put(`http://localhost:5000/statusProduct/${_id}`)
+        axios.put(`https://cryptic-hollows-56535.herokuapp.com/statusProduct/${_id}`)
             .then(function (response) {
                 if (response.data.modifiedCount) {
                     swal("Product Status UpDated");

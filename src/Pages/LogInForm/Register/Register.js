@@ -5,7 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
 
-    const { createUserEmailPassword } = useAuth();
+    const { createUserEmailPassword, error } = useAuth();
     const { register, handleSubmit, } = useForm();
     const navigate = useNavigate();
     const onSubmit = data => {
@@ -16,6 +16,7 @@ const Register = () => {
         <div>
             <div className="register user-info-feild">
                 <h4>Register</h4>
+                <p style={{ color: 'red' }}>{error}</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label htmlFor="username">Your name  *</label>
                     <input id='username' {...register("name", { required: true })} />

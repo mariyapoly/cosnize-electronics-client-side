@@ -7,7 +7,7 @@ import './ProductAddForm.css'
 const ProductAddForm = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/allProduct', {
+        axios.post('https://cryptic-hollows-56535.herokuapp.com/allProduct', {
             name: data.name,
             img: data.img,
             price: data.price,

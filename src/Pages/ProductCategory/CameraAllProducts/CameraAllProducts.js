@@ -9,7 +9,7 @@ const CameraAllProducts = () => {
 
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/cameraProduct')
+        axios.get('https://cryptic-hollows-56535.herokuapp.com/cameraProduct')
             .then(function (response) {
                 setProducts(response.data);
             })

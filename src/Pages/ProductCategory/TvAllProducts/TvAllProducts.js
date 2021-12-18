@@ -8,7 +8,7 @@ const TvAllProducts = () => {
 
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/tvProduct')
+        axios.get('https://cryptic-hollows-56535.herokuapp.com/tvProduct')
             .then(function (response) {
                 setProducts(response.data);
             })

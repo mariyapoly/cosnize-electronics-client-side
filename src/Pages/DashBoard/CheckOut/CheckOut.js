@@ -22,7 +22,7 @@ const CheckOut = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/cartProduct/${user.email}`)
+        axios.get(`https://cryptic-hollows-56535.herokuapp.com/cartProduct/${user.email}`)
             .then(function (response) {
                 setProducts(response.data);
             })

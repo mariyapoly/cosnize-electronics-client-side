@@ -9,7 +9,7 @@ const Shope = () => {
 
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/allProduct')
+        axios.get('https://cryptic-hollows-56535.herokuapp.com/allProduct')
             .then(function (response) {
                 setProducts(response.data);
             })

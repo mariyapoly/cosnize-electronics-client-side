@@ -5,7 +5,7 @@ import './Orders.css'
 import SingleOrder from '../SingleOrder/SingleOrder';
 import { useNavigate } from 'react-router-dom';
 import useOrder from '../../../hooks/useOrder';
-
+import { Spinner } from 'react-bootstrap';
 
 const Orders = () => {
 
@@ -40,12 +40,15 @@ const Orders = () => {
                 </thead>
                 <tbody>
                     {
-                        products.map(product => <SingleOrder
-                            key={product._id}
-                            product={product}
-                        ></SingleOrder>
-                        )
+                        products.length ? <>{
+                            products.map(product => <SingleOrder
+                                key={product._id}
+                                product={product}
+                            ></SingleOrder>
+                            )
+                        }</> : <Spinner animation="border" variant="primary" />
                     }
+
                 </tbody>
             </Table>
             {

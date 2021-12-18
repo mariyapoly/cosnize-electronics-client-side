@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/cartProduct`)
+        axios.get(`https://cryptic-hollows-56535.herokuapp.com/cartProduct`)
             .then(function (response) {
                 setProducts(response.data);
             })

@@ -17,7 +17,7 @@ const SingleOrder = ({ product }) => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`http://localhost:5000/cartProduct/${_id}`)
+                    axios.delete(`https://cryptic-hollows-56535.herokuapp.com/cartProduct/${_id}`)
                         .then(function (response) {
                             if (response.datadeletedCount) {
                                 swal("Product Delete Successfully", {
@@ -42,7 +42,7 @@ const SingleOrder = ({ product }) => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`http://localhost:5000/wishListProduct/${_id}`)
+                    axios.delete(`https://cryptic-hollows-56535.herokuapp.com/wishListProduct/${_id}`)
                         .then(function (response) {
                             if (response.datadeletedCount) {
                                 swal("Product Delete Successfully", {
@@ -57,7 +57,7 @@ const SingleOrder = ({ product }) => {
             });
     }
     const handleCartBtn = () => {
-        axios.post('http://localhost:5000/cartProduct', {
+        axios.post('https://cryptic-hollows-56535.herokuapp.com/cartProduct', {
             name: name,
             img: img,
             price: price,
@@ -70,7 +70,7 @@ const SingleOrder = ({ product }) => {
                 }
             })
 
-        axios.delete(`http://localhost:5000/wishListProduct/${_id}`)
+        axios.delete(`https://cryptic-hollows-56535.herokuapp.com/wishListProduct/${_id}`)
             .then(function (response) {
             })
     }

@@ -24,7 +24,7 @@ const SingleProduct = ({ product, handleDeletePd }) => {
     }
 
     const handleWhisListBtn = () => {
-        axios.post('http://localhost:5000/wishListProduct', {
+        axios.post('https://cryptic-hollows-56535.herokuapp.com/wishListProduct', {
             name: name,
             img: img,
             price: price,

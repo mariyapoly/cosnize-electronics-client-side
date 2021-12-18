@@ -9,7 +9,7 @@ const ManageAllProducts = () => {
 
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/allProduct')
+        axios.get('https://cryptic-hollows-56535.herokuapp.com/allProduct')
             .then(function (response) {
                 setProducts(response.data);
             })
@@ -26,7 +26,7 @@ const ManageAllProducts = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`http://localhost:5000/allProduct/${id}`)
+                    axios.delete(`https://cryptic-hollows-56535.herokuapp.com/allProduct/${id}`)
                         .then(function (response) {
                             if (response.datadeletedCount) {
                                 swal("Product Delete Successfully", {
@@ -40,7 +40,7 @@ const ManageAllProducts = () => {
                 }
             });
 
-        // axios.delete(`http://localhost:5000/allProduct/${id}`)
+        // axios.delete(`https://cryptic-hollows-56535.herokuapp.com/allProduct/${id}`)
         //     .then(function (response) {
         //     })
     }

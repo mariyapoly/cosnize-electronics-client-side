@@ -23,7 +23,7 @@ const CheckoutForm = ({ total, id, products, sum, shipping }) => {
     useEffect(() => {
 
 
-        axios.post('http://localhost:5000/create-payment-intent', {
+        axios.post('https://cryptic-hollows-56535.herokuapp.com/create-payment-intent', {
             price: price
         })
             .then(function (response) {
@@ -92,7 +92,7 @@ const CheckoutForm = ({ total, id, products, sum, shipping }) => {
 
         }
 
-        axios.put(`http://localhost:5000/cartProduct/${user.email}`, {
+        axios.put(`https://cryptic-hollows-56535.herokuapp.com/cartProduct/${user.email}`, {
             payment: payment
         })
             .then(function (response) {

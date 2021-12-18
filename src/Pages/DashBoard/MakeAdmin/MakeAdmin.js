@@ -8,7 +8,7 @@ const MakeAdmin = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.put(`http://localhost:5000/makeAdmin/${data.email}`)
+        axios.put(`https://cryptic-hollows-56535.herokuapp.com/makeAdmin/${data.email}`)
             .then(function (response) {
                 if (response.data.modifiedCount) {
                     swal("Make Admin Successfully");

@@ -18,7 +18,7 @@ const Reviews = () => {
         formData.append('img', data.img[0]);
 
 
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://cryptic-hollows-56535.herokuapp.com/addReview', {
             method: 'POST',
             body: formData
         })

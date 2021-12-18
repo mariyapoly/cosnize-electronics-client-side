@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const SignIn = () => {
 
-    const { loginUserWithEmailPassword } = useAuth();
+    const { loginUserWithEmailPassword, error } = useAuth();
     const { register, handleSubmit, } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
@@ -19,6 +19,7 @@ const SignIn = () => {
         <div>
             <div className="signin user-info-feild">
                 <h4>Login</h4>
+                <p style={{ color: 'red' }}>{error}</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label htmlFor="email">Username or email  *</label>
                     <input id='email' {...register("email", { required: true })} />
