@@ -19,3 +19,6 @@ button.payment-btn:disabled {
 .sub-total.total {
     margin-bottom: 20px;
 }
+input#note {
+    height: 70px;
+}

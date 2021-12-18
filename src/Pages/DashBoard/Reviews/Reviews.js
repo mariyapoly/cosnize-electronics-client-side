@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { useForm } from "react-hook-form";
+import swal from 'sweetalert';
 import './Reviews.css'
 
 const Reviews = () => {
 
-    const { register, handleSubmit, } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data.name, data.des, data.img[0])
         if (!data.img[0]) {
@@ -24,7 +25,10 @@ const Reviews = () => {
         })
             .then(response => response.json())
             .then(result => {
-                console.log('Success:', result);
+                if (result.insertedId) {
+                    swal("Make Admin Successfully");
+                    reset();
+                };
             })
             .catch(error => {
                 console.error('Error:', error);
