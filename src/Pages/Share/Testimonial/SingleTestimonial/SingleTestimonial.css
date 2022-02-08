@@ -1,0 +1,25 @@
+/* testimonial-area css */
+
+.single-testimonial {
+  text-align: center;
+  margin-top: -39px;
+}
+
+.single-testimonial p {
+  font-size: 15px;
+  color: #666666;
+  line-height: 28px;
+  width: 787px;
+  margin: 25px auto;
+}
+
+.single-testimonial h5 {
+  color: #5677fc;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.single-testimonial span {
+  color: #666666;
+  font-size: 14px;
+}

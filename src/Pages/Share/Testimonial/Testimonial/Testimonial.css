@@ -1,0 +1,30 @@
+/* testimonial-area css */
+.testimonial-area {
+  padding-top: 75px;
+}
+.testimonial-area .testimonial-wrapper {
+  text-align: center;
+}
+
+.testimonial-area .testimonial-wrapper span {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #5677fc;
+  font-weight: 700;
+}
+
+.testimonial-area .testimonial-wrapper h3 {
+  font-size: 28px;
+  color: #222222;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 8px 0 20px;
+}
+
+.testimonial-area .testimonial-wrapper p {
+  color: #666666;
+  font-size: 14px;
+  width: 650px;
+  margin: 0 auto;
+  margin-bottom: 43px;
+}

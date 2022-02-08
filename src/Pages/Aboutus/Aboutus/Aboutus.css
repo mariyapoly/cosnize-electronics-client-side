@@ -1,35 +1,100 @@
-.about-text p {
-    color: #666666;
-    font-size: 14px;
-    line-height: 24px;
-}
-
-.about-text h5 {
-    font-size: 18px;
-    color: #222222;
-    font-weight: 400;
-    margin: 25px 0;
-    line-height: 30px;
-}
-
-.about-text h3 {
-    color: #222222;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 36px;
-}
-
-.about-text span {
-    font-weight: 500;
-    color: #5677FC;
-    font-size: 14px;
-    margin-bottom: 30px;
-    display: block;
-}
-
+/* about-part css */
 .about-part {
-    padding: 80px 0;
+  padding: 50px 0 20px;
+}
+.about-text p {
+  color: #666666;
+  font-size: 14px;
+  line-height: 24px;
+}
+.about-text h5 {
+  font-size: 18px;
+  color: #222222;
+  font-weight: 400;
+  margin: 25px 0;
+  line-height: 30px;
+}
+.about-text h3 {
+  color: #222222;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 36px;
+}
+.about-text span {
+  font-weight: 500;
+  color: #5677fc;
+  font-size: 14px;
+  margin-bottom: 30px;
+  display: block;
 }
 .about-img {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+.about-service-area {
+  background: #f6f7f9;
+  padding: 70px 0 60px;
+}
+/*  chose-part css */
+.chose-part span {
+  color: #5677fc;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+.chose-part {
+  text-align: center;
+  margin-bottom: 45px;
+}
+.chose-part h3 {
+  color: #222222;
+  font-size: 28px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin: 6px 0 20px;
+}
+.chose-part p {
+  color: #666666;
+  font-size: 14px;
+  width: 612px;
+  margin: 0 auto;
+}
+/*  our-service css */
+.our-service .single-service {
+  text-align: center;
+}
+
+.our-service .single-service h5 {
+  font-size: 14px;
+  color: #222222;
+  font-weight: 700;
+  margin: 25px 0 20px;
+}
+
+.our-service .single-service p {
+  color: #666666;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.our-service .single-service {
+  margin-bottom: 40px;
+}
+
+/* mission-history-part css */
+.mission-history-part .single-mission {
+  text-align: center;
+}
+
+.mission-history-part .single-mission h5 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 25px 0 20px;
+}
+
+.mission-history-part .single-mission p {
+  color: #666666;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0 15px;
 }
